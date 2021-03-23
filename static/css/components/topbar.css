@@ -1,0 +1,33 @@
+@import url("../settings.css");
+
+.top-bar-nav {
+    background-color: #f5f5f5;
+    box-shadow: 0 8px 8px -6px #dadbda;;
+}
+
+.logged-user, .logout-btn, .notify-icon {
+    color: darkgrey;
+    font-family: var(--thin-font);
+}
+
+.username, .logout-btn {
+    font-family: var(--regular-font);
+}
+
+.logged-user, .logout-btn {
+    font-size: 12px;
+}
+
+.logged-user:hover, .logout-btn:hover {
+    color: var(--third-color);
+}
+
+.logout-btn {
+    text-transform: capitalize;
+}
+
+.notify-icon {
+    color: var(--third-color);
+    font-size: 24px;
+}
+

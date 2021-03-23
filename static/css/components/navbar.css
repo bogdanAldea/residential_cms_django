@@ -1,0 +1,115 @@
+@import url("../settings.css");
+
+/* GENERAL STYLING */
+
+.sidebar-nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 100vh;
+    background-color: var(--third-color);
+}
+
+.section-title {
+    color: darkgray;
+    font-family: var(--main-font);
+    font-size: 0.8em;
+    text-transform: capitalize;
+}
+
+/* LOGO STYLING */
+
+.navbar-brand {
+    margin-left: 1.5rem;
+    padding-top: 1.2em;
+}
+
+.navbar-brand h4 {
+    color: whitesmoke;
+    font-family: var(--main-font);
+}
+
+/*!* LOGGED USER SECTION STYLING *!*/
+
+/*.navbar-logged-user {*/
+/*    padding-top: 40px;*/
+/*    margin-left: 1.5rem;*/
+/*    line-height: 10px;*/
+/*}*/
+
+/*.navbar-logged-user .info-text {*/
+/*    color: whitesmoke;*/
+/*}*/
+
+/*.username {*/
+/*    font-family: var(--main-font);*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*.user_role {*/
+/*    font-size: 10px;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 2px;*/
+/*}*/
+
+/*.logout-btn {*/
+/*    color: whitesmoke;*/
+/*}*/
+
+/*.logout-btn:hover {*/
+/*    color: aquamarine;*/
+/*}*/
+
+/* MENU SECTION STYLING */
+
+.navbar-menu {
+    padding-top: 50%;
+}
+
+.navbar-menu li a {
+    color: whitesmoke;
+    font-family: var(--main-font);
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    padding-left: 1rem;
+}
+
+.navbar-menu li {
+    line-height: 60px;
+}
+
+.navbar-menu .menu-icon {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.navbar-menu li.active {
+    background-color: whitesmoke;
+    border-radius: 30px 0 0 30px;
+}
+
+li.active a {
+    color: var(--third-color);
+}
+
+/* FOOTER SECTION STYLING */
+.nav-footer {
+    margin-left: 1.5rem;
+    margin-top: 80px;
+}
+
+.tech-icon, .tech-name {
+    color: whitesmoke;
+}
+
+.tech-icon {
+    font-size: 24px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+

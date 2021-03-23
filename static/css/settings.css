@@ -1,0 +1,60 @@
+:root {
+    --main-dark: #272936;
+    --secondary-dark: #313443;
+    --third-color: #4725DB;
+    --text-color: #88929d;
+
+    --main-font: "main-font-SM";
+    --medium-font: "main-font-R";
+    --regular-font: "main-font-M";
+    --thin-font: "main-font-L";
+
+    --custom-shadows: -8px 8px 22px #d8d8d8,
+                        8px -8px 22px #ffffff;
+}
+
+@font-face {
+    font-family: "main-font-SM";
+    src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "main-font-R";
+    src: url("../fonts/Poppins/Poppins-Thin.ttf");
+}
+
+@font-face {
+    font-family: "main-font-M";
+    src: url("../fonts/Poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: "main-font-L";
+    src: url("../fonts/Poppins/Poppins-Light.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    /*overflow: hidden;*/
+}
+
+
+html, body {
+    min-height: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-panel {
+    background-color: wheat;
+}
+
+.content-panel {
+    background-color: whitesmoke;
+}
+

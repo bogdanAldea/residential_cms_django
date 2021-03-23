@@ -1,0 +1,89 @@
+@import url("../settings.css");
+
+
+.top-card {
+    border: none;
+    border-radius: 10px;
+    background: #F5F5F5;
+    box-shadow:  var(--custom-shadows);
+}
+
+.info-card-icon {
+    font-size:36px;
+    color: var(--third-color);
+}
+
+.info-card-text {
+    color: var(--text-color)
+}
+
+.info-card-text h3 {
+    font-family: var(--thin-font);
+    font-size: 24px;
+}
+
+.info-card-text span {
+    font-family: var(--main-font);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.info-table {
+    border-radius: 10px;
+    background: #F5F5F5;
+    box-shadow:  var(--custom-shadows);
+}
+
+.table-title th {
+    background-color: var(--third-color);
+    font-family: var(--medium-font);
+    color: whitesmoke;
+    font-size: 24px;
+}
+
+.table-heading {
+    background-color: #313443;
+    color: whitesmoke;
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.table-heading, .info-table-body {
+    text-align: center;
+}
+
+.info-table-body {
+    color: var(--text-color);
+    font-family: var(--thin-font);
+}
+
+.info-table-body tr {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.q-card {
+    border-radius: 10px;
+    background: #F5F5F5;
+    box-shadow:  var(--custom-shadows);
+}
+
+.q-card-name {
+    font-family: var(--main-font);
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.q-card-quantity {
+    font-family: var(--main-font);
+    font-size: 24px;
+    color: var(--third-color);
+}
+
+.graph {
+    border-radius: 10px;
+    /*background: var(--third-color);*/
+    background-color: whitesmoke;
+    box-shadow:  var(--custom-shadows);
+    height: 28vh;
+}
