@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<title>CMS-Dashboard</title>
+
+<div class="container">
+
+    <div class="row content-a mt-5">
+
+        <div class="col">
+            <div class="card top-card">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="media row px-4">
+
+                            <div  class="col-4 align-self-center">
+                                <i class="las la-globe info-card-icon"></i>
+                             </div>
+
+                            <div class="col-8 media-body text-right info-card-text">
+                                 <h3>String data</h3>
+                                <span>Address</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card top-card">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="media row px-5">
+
+                            <div  class="col-4 align-self-center">
+                                <i class="las la-user-circle info-card-icon"></i>
+                             </div>
+
+                            <div class="col-8 media-body text-right info-card-text">
+                                 <h3>N</h3>
+                                <span>Occupied Apartments</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card top-card">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="media row px-5">
+
+                            <div  class="col-4 align-self-center">
+                                <i class="lar la-building info-card-icon"></i>
+                             </div>
+
+                            <div class="col-8 media-body text-right info-card-text">
+                                 <h3>M</h3>
+                                <span>Total Apartments</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row content-b mt-5">
+
+        <div class="col-8">
+            <table class="table info-table table-borderless">
+
+                <thead>
+                    <tr class="table-title">
+                        <th class="py-4 px-4" colspan="4">Current Month Expenses</th>
+                    </tr>
+                    <tr class="table-heading">
+                        <th>Apartment</th>
+                        <th>Number of persons</th>
+                        <th>Payment amount</th>
+                        <th>Payment status</th>
+                    </tr>
+                </thead>
+
+                <tbody class="info-table-body">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1530.20</td>
+                        <td>Paid</td>
+                    </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1530.20</td>
+                            <td>Paid</td>
+                        </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1530.20</td>
+                            <td>Paid</td>
+                        </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1530.20</td>
+                            <td>Paid</td>
+                        </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1530.20</td>
+                            <td>Paid</td>
+                        </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1530.20</td>
+                            <td>Paid</td>
+                        </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1530.20</td>
+                            <td>Paid</td>
+                        </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1530.20</td>
+                            <td>Paid</td>
+                        </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1530.20</td>
+                            <td>Paid</td>
+                        </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1530.20</td>
+                        <td>Paid</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="col-4">
+
+            <div>
+                <div class="row quantity-cards">
+
+                <div class="col-6 text-center">
+                    <div class="q-card py-3 px-3">
+                        <p class="q-card-name">Total Hot Water Utilised</p>
+                        <p class="q-card-quantity">520342</p>
+                    </div>
+                </div>
+
+                <div class="col-6 text-center">
+                    <div class="q-card py-3 px-3">
+                        <p class="q-card-name">Total Cold Water Utilised</p>
+                        <p class="q-card-quantity">855642</p>
+                    </div>
+                </div>
+
+            </div>
+                <div class="row quantity-cards mt-4">
+
+                <div class="col-6 text-center">
+                    <div class="q-card py-3 px-3">
+                        <p class="q-card-name">Total Gas power Utilised</p>
+                        <p class="q-card-quantity">15000231</p>
+                    </div>
+                </div>
+
+                <div class="col-6 text-center">
+                    <div class="q-card py-3 px-3">
+                        <p class="q-card-name">Total Heating Power Utilised</p>
+                        <p class="q-card-quantity">2151224</p>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+           <div>
+               <div class="graph mt-4"></div>
+           </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock content %}
