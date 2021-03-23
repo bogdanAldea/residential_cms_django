@@ -1,0 +1,28 @@
+{% load static %}
+
+
+<nav class="navbar top-bar-nav navbar-expand-lg">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+
+                <a class="nav-link logged-user active" aria-current="page" href="#">
+                    <span class="px-3">Welcome, <span class="username">Test User</span></span>
+                    <span><img src="../static/images/avatar.png" alt="" width="40" height="40"></span>
+                </a>
+
+            </div>
+
+                <a class="nav-link btn logout-btn" href="#">Log Out &rarr;</a>
+
+                <a class="nav-link notify-icon" href="#">
+                   <i class="lar la-bell"></i>
+                </a>
+            </div>
+        </div>
+
+</nav>
