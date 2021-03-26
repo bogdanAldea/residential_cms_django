@@ -1,0 +1,84 @@
+@import url("../settings.css");
+
+.menu-list {
+    line-height: 48px;
+}
+
+.nav-link {
+    border: none;
+    background: none;
+    color: var(--text-color);
+    font-family: var(--regular-font);
+    font-size: 14px;
+    padding: 0 30px;
+}
+
+.nav-link:hover {
+    /*border-radius: 30px 0 0 30px;*/
+    background-color: lightgray;
+}
+
+#sidebarMenu > div > div.menu-list.list-group.list-group-flush > a > i {
+    font-size: 18px;
+}
+
+.sidebar {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0; /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.sidebar .active {
+    /*border-radius: 30px 0 0 30px;*/
+    background-color: var(--main-accent);
+    color: white;
+}
+
+.position-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: var(--main-font);
+    font-size: 24px;
+}
+
+.section-title h5 {
+    color: var(--text-color);
+    font-family: var(--regular-font);
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-left: 30px;
+}
+
+.tech-icon {
+    color: var(--main-accent);
+    font-size: 24px;
+}
+
+.powered-by-container {
+    padding: 0 30px;
+}
+
+.menu-list, .sidebar-footer {
+    margin-top: 80px;
+}

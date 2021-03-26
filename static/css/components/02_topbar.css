@@ -1,0 +1,19 @@
+@import url("../settings.css");
+
+.badge-notification {
+    color: white;
+    font-size: 10px;
+}
+
+.message {
+    color: white;
+}
+
+.notification-icon {
+    font-size: 24px;
+    color: white;
+}
+
+#main-navbar {
+    background-color: var(--main-accent);
+}

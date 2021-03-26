@@ -1,0 +1,58 @@
+@import url("../settings.css");
+
+.counter-update-form {
+    width: 100%;
+    background-color: white;
+}
+
+.counter {
+    padding: 80px;
+}
+
+.form-header-title, .form-header-icon {
+    align-self: center;
+}
+
+.form-header-icon {
+    font-size: 40px;
+    color: #6b4bf3;
+}
+
+.form-header-title > h5{
+    font-size: 32px;
+    font-family: var(--thin-font);
+    color: var(--text-color);
+}
+
+.form-body {
+    padding: 50px 0;
+}
+
+.col-form-label {
+    font-family: var(--regular-font);
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.update-counter-btn {
+    max-width: 75%;
+    box-shadow: none;
+    background-color: var(--main-accent);
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    color: white;
+}
+
+.form-total-count {
+    font-size: 14px;
+    font-family: var(--regular-font);
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.total-count-span {
+    font-family: var(--main-font);
+    color: #6b4bf3;
+}

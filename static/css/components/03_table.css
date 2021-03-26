@@ -1,0 +1,30 @@
+@import "../settings.css";
+
+.general-table {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.general-table_head {
+    font-size: 10px;
+    font-family: var(--thin-font);
+    color: var(--text-color);
+}
+
+.general-table-body {
+    font-size: 12px;
+    font-family: var(--regular-font);
+    color: #929292;
+}
+
+.general-table-row {
+    background-color: white;
+    vertical-align: middle;
+    border-radius: 10px;
+    transition: .8s;
+}
+
+.general-table-row:hover {
+    background-color: #ececec;
+    transition: .8s;
+}

@@ -1,16 +1,25 @@
 :root {
     --main-dark: #272936;
     --secondary-dark: #313443;
-    --third-color: #4725DB;
-    --text-color: #88929d;
+    /*--main-accent: #4725DB;*/
+    --main-accent: #EF4F4C;
+    --text-color: #5a5b5f;
+    /*--default-bg: #e0e0e0;*/
+    --default-bg: #EFF2F8;
 
     --main-font: "main-font-SM";
     --medium-font: "main-font-R";
     --regular-font: "main-font-M";
     --thin-font: "main-font-L";
 
-    --custom-shadows: -8px 8px 22px #d8d8d8,
-                        8px -8px 22px #ffffff;
+    /*--custom-shadows: -8px 8px 22px #bebebe,*/
+    /*                    8px -8px 22px #ffffff;*/
+    /*--custom-shadows: -20px -20px 60px #cbced3,*/
+    /*         20px 20px 60px #ffffff;*/
+    --custom-shadows: -5px -5px 10px #d0d3d8,
+             5px 5px 10px #ffffff;
+    --table-shadows: -4px -4px 8px #e1e3e9,
+             4px 4px 8px #fdffff;
 }
 
 @font-face {
@@ -33,28 +42,15 @@
     src: url("../fonts/Poppins/Poppins-Light.ttf");
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style-type: none;
-    /*overflow: hidden;*/
+.content-panel {
+    margin-top: 64px;
+    margin-left: 240px;
+    background-color: var(--default-bg);
 }
-
 
 html, body {
-    min-height: 100%;
-    height: 100%;
+    min-height: 100%;;
     padding: 0;
     margin: 0;
+    background-color: var(--default-bg)
 }
-
-.sidebar-panel {
-    background-color: wheat;
-}
-
-.content-panel {
-    background-color: whitesmoke;
-}
-

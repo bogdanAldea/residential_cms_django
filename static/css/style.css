@@ -1,4 +1,9 @@
-@import "components/navbar.css";
-@import "components/dashboard.css";
-@import "components/settings_page.css";
-@import "components/topbar.css";
+/*@import "components/01_navbar.css";*/
+/*@import "pages/01_dashboard.css";*/
+/*@import "pages/02_settings_page.css";*/
+/*@import "pages/03_counters.css";*/
+/*@import "pages/04_payments.css";*/
+/*@import "components/02_topbar.css";*/
+
+@import "pages/00_pages.css";
+@import "components/00_components.css";

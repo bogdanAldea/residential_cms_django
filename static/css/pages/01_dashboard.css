@@ -1,0 +1,45 @@
+@import url("../settings.css");
+
+
+/*================================================*/
+/*===           TOP SECTION - CONTENT A       ====*/
+/*================================================*/
+.top-card {
+    border: none;
+    border-radius: 0;
+    background: white;
+    box-shadow:  var(--custom-shadows);
+}
+
+.card-left {
+    background-color: #6b4bf3;
+    color: white;
+}
+
+.card-center {
+    background-color: #009688;
+}
+
+.card-right {
+    background-color: #EF4F4C;
+}
+
+.info-card-icon {
+    font-size:36px;
+    color: white;
+}
+
+.info-card-text {
+    color: white;
+}
+
+.info-card-text h3 {
+    font-family: var(--thin-font);
+    font-size: 24px;
+}
+
+.info-card-text span {
+    font-family: var(--main-font);
+    font-size: 12px;
+    text-transform: uppercase;
+}
