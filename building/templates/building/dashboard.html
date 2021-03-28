@@ -5,7 +5,7 @@
     <title>CMS-Dashboard</title>
     <div class="container dashboard-panel py-4">
 
-        <div class="row content-a my-4">
+        <div class="row content-a my-4 align-content-center">
 
             <div class="col">
                 <div class="card top-card card-left">
@@ -18,7 +18,7 @@
                                 </div>
 
                                 <div class="col-8 media-body text-right info-card-text">
-                                    <h3>String data</h3>
+                                    <h3 class="address-card-text">{{ building.address }}</h3>
                                     <span>Address</span>
                                 </div>
 
@@ -38,8 +38,8 @@
                                 </div>
 
                                 <div class="col-8 media-body text-right info-card-text">
-                                    <h3>Integer X</h3>
-                                    <span>Occupied Apartments</span>
+                                    <h3>{{ occupied }}</h3>
+                                    <span>Occupied apartments</span>
                                 </div>
 
                             </div>
@@ -58,8 +58,8 @@
                                 </div>
 
                                 <div class="col-8 media-body text-right info-card-text">
-                                    <h3>Integer Y</h3>
-                                    <span>Total Apartments</span>
+                                    <h3>{{ apartments_all|length }}</h3>
+                                    <span>Total apartments</span>
                                 </div>
 
                             </div>
@@ -85,54 +85,16 @@
                     </thead>
 
                     <tbody class="general-table-body">
-                        <tr class="general-table-row">
-                            <td class="ps-5">1</td>
-                            <td>2</td>
-                            <td>180.00</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr class="general-table-row">
-                            <td class="ps-5">1</td>
-                            <td>2</td>
-                            <td>180.00</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr class="general-table-row">
-                            <td class="ps-5">1</td>
-                            <td>2</td>
-                            <td>180.00</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr class="general-table-row">
-                            <td class="ps-5">1</td>
-                            <td>2</td>
-                            <td>180.00</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr class="general-table-row">
-                            <td class="ps-5">1</td>
-                            <td>2</td>
-                            <td>180.00</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr class="general-table-row">
-                            <td class="ps-5">1</td>
-                            <td>2</td>
-                            <td>180.00</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr class="general-table-row">
-                            <td class="ps-5">1</td>
-                            <td>2</td>
-                            <td>180.00</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr class="general-table-row">
-                            <td class="ps-5">1</td>
-                            <td>2</td>
-                            <td>180.00</td>
-                            <td>Paid</td>
-                        </tr>
+
+                        {% for apartment in apartments_all %}
+                            <tr class="general-table-row">
+                                <td class="ps-5">{{ apartment.id}}</td>
+                                <td>{{ apartment.number_of_persons}}</td>
+                                <td>{{ apartment.current_month_payment}}</td>
+                                <td>{{ apartment.get_payment_status_display }}</td>
+                            </tr>
+                        {% endfor %}
+
                     </tbody>
 
                 </table>
