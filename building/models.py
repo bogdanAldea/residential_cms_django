@@ -1,4 +1,5 @@
 from django.db import models
+from .config import UtilType
 from django.contrib.auth.models import AbstractUser
 
 
@@ -59,7 +60,13 @@ class Utility(models.Model):
         ('Private', 'Private')
     )
 
+    TYPES = (
+        ('Mutual', 'Mutual'),
+        ('Individual', 'Individual')
+    )
+
     name                = models.CharField(max_length=50, null=True)
+    util_type           = models.CharField(max_length=20, null=True, choices=UtilType.choices)
     provider            = models.CharField(max_length=50, choices=PROVIDERS)
     contract_starts     = models.DateField(null=True, blank=True)
     contract_ends       = models.DateField(null=True, blank=True)
@@ -78,7 +85,6 @@ class MutualUtil(models.Model):
 
     apartment       = models.ForeignKey(Apartment, null=True, on_delete=models.CASCADE)
     common_util     = models.ForeignKey(Utility, null=True, on_delete=models.CASCADE)
-    util_type       = models.CharField(default='Mutual', max_length=20)
     monthly_payment = models.FloatField(default=0, null=True)
 
     def __str__(self):
@@ -98,7 +104,6 @@ class IndividualUtil(models.Model):
 
     apartment           = models.ForeignKey(Apartment, null=True, on_delete=models.CASCADE)
     individual_util     = models.ForeignKey(Utility, null=True, on_delete=models.CASCADE)
-    util_type           = models.CharField(default='Individual', max_length=20)
     monthly_payment     = models.FloatField(default=0, null=True)
     status              = models.BooleanField(default=False, null=True, choices=STATUS)
 
