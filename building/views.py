@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .models import *
 from .forms import *
+from .config import UtilType
 
 
 # View for building's admin dashboard
@@ -33,9 +34,7 @@ def admin_settings(request):
     mutual_utils = MutualUtil.objects.all().\
         filter(common_util__building=building)
 
-    supply_data = IndividualUtil.objects.all().\
-        filter(individual_util__building=building).\
-        order_by('individual_util__name')
+    supply_data = Utility.objects.filter(util_type=UtilType.individual)
 
     features_data = FeatureLinked.objects.all().\
         filter(related_feature__building=building)
@@ -46,7 +45,7 @@ def admin_settings(request):
 
     context = {
         'mutual_utils': mutual_utils,
-        'supply_data': supply_data.order_by('individual_util__name'),
+        'supply_data': supply_data.order_by('name'),
         'features_data': features_data,
         'apartments': apartments,
     }
@@ -108,3 +107,5 @@ def add_residential(request):
             return redirect('building:dashboard')
     context = {'form': form}
     return render(request, 'building/create_residential.html', context)
+
+
