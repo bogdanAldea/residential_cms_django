@@ -26,9 +26,18 @@ class Tenant(models.Model):
 # Create main parent app models
 class Building(models.Model):
 
-    admin                       = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    address                     = models.CharField(max_length=100, null=True)
-    number_of_apartments        = models.IntegerField()
+    admin                           = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    address                         = models.CharField(max_length=100, null=True)
+    number_of_apartments            = models.IntegerField()
+
+    # cold water main index
+    cold_water_main_index           = models.IntegerField(default=0, null=True)
+    # hot water main index
+    hot_water_main_index            = models.IntegerField(default=0, null=True)
+    # gas power main index
+    gas_power_main_index            = models.IntegerField(default=0, null=True)
+    # heating power main index
+    heating_power_main_index        = models.IntegerField(default=0, null=True)
 
     def __str__(self):
         return self.address
