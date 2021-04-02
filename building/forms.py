@@ -10,12 +10,18 @@ class CreateTenant(ModelForm):
 
 class CreateUserForm(UserCreationForm):
     class Meta:
-        model = User
-        # fields = ['email', 'password1', 'password2']
-        fields = ['username', 'email', 'password1', 'password2']
+        model   = User
+        fields  = ['username', 'email', 'password1', 'password2']
 
 
 class CreateResidentialForm(ModelForm):
     class Meta:
-        model = Building
-        fields = '__all__'
+        model   = Building
+        fields  = '__all__'
+
+
+class CreateUtilForm(ModelForm):
+    class Meta:
+        model   = Utility
+        fields  = '__all__'
+        exclude = ['building']
