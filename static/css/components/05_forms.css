@@ -1,0 +1,56 @@
+@import "../settings.css";
+
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+
+.custom-form {
+    width: 40%;
+    background-color: white;
+    padding: 64px;
+}
+
+.form-row {
+    height: inherit;
+}
+
+.title {
+    font-family: var(--medium-font);
+    font-size: 36px;
+}
+
+
+input, select {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #ECEAEA;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.label {
+    font-family: var(--thin-font);
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.input {
+    font-family: var(--regular-font);
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.create-btn {
+    background-color: var(--main-accent);
+    color: whitesmoke;
+    font-family: var(--regular-font);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 0;
+}
