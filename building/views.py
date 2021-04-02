@@ -31,10 +31,15 @@ def admin_settings(request):
     building = Building.objects.get(admin=user)
 
     # Queryset for mutual utilities
-    mutual_utils = MutualUtil.objects.all().\
-        filter(common_util__building=building)
+    mutual_utils = Utility.objects.filter(
+        util_type=UtilType.mutual,
+        building=building
+    )
 
-    supply_data = Utility.objects.filter(util_type=UtilType.individual)
+    supply_data = Utility.objects.filter(
+        util_type=UtilType.individual,
+        building=building
+    )
 
     features_data = FeatureLinked.objects.all().\
         filter(related_feature__building=building)
@@ -109,3 +114,19 @@ def add_residential(request):
     return render(request, 'building/create_residential.html', context)
 
 
+# View for creating a new utility objects
+def add_utility(request):
+    logged_admin = User.objects.get(username=request.user.username)
+    cw_building = Building.objects.get(admin=logged_admin)
+
+    form = CreateUtilForm()
+    if request.method == 'POST':
+        form = CreateUtilForm(request.POST)
+        if form.is_valid():
+            util = form.save(commit=False)
+            util.building = cw_building
+            util.save()
+            return redirect('building:settings')
+
+    context = {'form': form}
+    return render(request, 'building/add_utility.html', context)
