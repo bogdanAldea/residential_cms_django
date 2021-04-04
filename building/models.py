@@ -3,8 +3,10 @@ from .config import UtilType
 from django.contrib.auth.models import AbstractUser
 
 
-# Define custom user model
 class User(AbstractUser):
+    """
+    Defined custom user model with distinct roles.
+    """
     is_admin    = models.BooleanField(default=False)
     is_tenant   = models.BooleanField(default=False)
 
@@ -13,6 +15,10 @@ class User(AbstractUser):
 
 
 class Tenant(models.Model):
+    """
+    Defined tenant profile model for user with "is_tenant" role. Profile allows users to view their assigned apartment
+    object and gives control over some functionalities.
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50, null=True)
@@ -23,9 +29,11 @@ class Tenant(models.Model):
         return f'{self.first_name} {self.last_name} profile'
 
 
-# Create main parent app models
 class Building(models.Model):
-
+    """
+    Defined main model that encapsulates the whole app.
+    Model takes a one to one relationship with a user that has admin privileges.
+    """
     admin                           = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     address                         = models.CharField(max_length=100, null=True)
     number_of_apartments            = models.IntegerField()
@@ -43,8 +51,12 @@ class Building(models.Model):
         return self.address
 
 
-# Defined apartment model.
 class Apartment(models.Model):
+    """
+    Defined model that represent an apartment. It takes a one to many relationship with
+    the parent model (Building model) and a one to one relationship whit a user that hasn't
+    admin privileges.
+    """
     PAYMENT_STATUS = (
         (True, 'Paid'),
         (False, 'Unpaid')
@@ -61,9 +73,11 @@ class Apartment(models.Model):
         return f'Apartment {self.pk}'
 
 
-# Defines utility model
 class Utility(models.Model):
-
+    """
+    Defines model that describes a general utility used bu either an entire building, or individually
+    by an apartment object.
+    """
     PROVIDERS = (
         ('City', 'City'),
         ('Private', 'Private')
@@ -86,12 +100,11 @@ class Utility(models.Model):
         return self.name
 
 
-"""
-Defines mutual utility model. Each model points to a created utility object 
-with the pre defined type of 'mutual'.
-"""
 class MutualUtil(models.Model):
-
+    """
+    Defines mutual utility model. Each model points to a created utility object
+    with the pre defined type of 'mutual'.
+    """
     apartment       = models.ForeignKey(Apartment, null=True, on_delete=models.CASCADE)
     common_util     = models.ForeignKey(Utility, null=True, on_delete=models.CASCADE)
     monthly_payment = models.FloatField(default=0, null=True)
@@ -100,12 +113,11 @@ class MutualUtil(models.Model):
         return f'{self.common_util.name}: {self.apartment}'
 
 
-"""
-Defines individual utility model. Each model points to a created utility object 
-with the pre defined type of 'individual'.
-"""
 class IndividualUtil(models.Model):
-
+    """
+    Defines individual utility model. Each model points to a created utility object
+    with the pre defined type of 'individual'.
+    """
     STATUS = (
         (True, 'Active'),
         (False, 'Disabled')
@@ -120,9 +132,11 @@ class IndividualUtil(models.Model):
         return f'{self.individual_util.name}: {self.apartment}'
 
 
-# Defined feature model
 class Feature(models.Model):
-
+    """
+    Defines model that describes a general feature.
+    It takes a one to many relationship with the building it's assigned to.
+    """
     name            = models.CharField(max_length=50, null=True)
     feature_tax     = models.FloatField(default=0, null=True)
     building        = models.ForeignKey(Building, null=True, on_delete=models.CASCADE)
@@ -131,9 +145,11 @@ class Feature(models.Model):
         return self.name
 
 
-# Defines feature -> apartment intermediary model. Each model points to a created feature object
 class FeatureLinked(models.Model):
-
+    """
+    Defined model that has a one to many relationship with a newly created general feature & an
+    one to many relationship with every apartment created.
+    """
     apartment           = models.ForeignKey(Apartment, null=True, on_delete=models.CASCADE)
     related_feature     = models.ForeignKey(Feature, null=True, on_delete=models.CASCADE)
 
