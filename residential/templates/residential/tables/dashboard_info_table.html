@@ -1,0 +1,28 @@
+{% load static %}
+<table class="table table-borderless general-table dashboard-apartments-table">
+
+    <thead class="general-table-head">
+    <tr class="general-table-title-row">
+        <th class="table-title-col" colspan="3">Current Month Expenses</th>
+        <th class="table-button-col" colspan="1"><button class="btn export-table-btn">Export CSV &darr;</button></th>
+    </tr>
+    <tr>
+        <th>Apartment</th>
+        <th>Number Of Persons</th>
+        <th>Payment Amount</th>
+        <th>Payment Status</th>
+    </tr>
+    </thead>
+
+    <tbody class="general-table-body">
+    {% for apartment in apartments %}
+        <tr class="general-table-row">
+            <td>{{ apartment.id }}</td>
+            <td>{{ apartment.persons }}</td>
+            <td>{{ apartment.current_month_payment }}</td>
+            <td>{{ apartment.get_payment_status_display }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
