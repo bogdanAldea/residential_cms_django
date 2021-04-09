@@ -53,3 +53,7 @@ input, select {
     letter-spacing: 1px;
     padding: 16px 0;
 }
+
+.util-creation-form {
+    margin-top: calc(var(--topbar-height) + 50px);
+}
