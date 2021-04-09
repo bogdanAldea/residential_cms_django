@@ -1,0 +1,44 @@
+@import "../design_system/00_design_system.css";
+
+
+/*================================================*/
+/*===           GENERAL TABLE                 ====*/
+/*================================================*/
+.general-table {
+    border-collapse: separate;
+    border-spacing: 1px 10px;
+    table-layout: fixed;
+}
+
+
+.general-table-head {
+    font-size: 9px;
+    font-family: var(--font-medium);
+    color: var(--dark);
+}
+
+.general-table-body {
+    font-size: 12px;
+    font-family: var(--font-regular);
+    color: var(--dark);
+}
+
+.general-table-row {
+    /*background-color: #F5F5F7;*/
+    background-color: #f6f6ff;
+    vertical-align: middle;
+    box-shadow: var(--shadows);
+}
+
+/*================================================*/
+/*===           DASHBOARD INFO TABLE          ====*/
+/*================================================*/
+.table-title-col, .table-button-col {
+    vertical-align: middle;
+}
+
+.table-title-col {
+    font-size: 18px;
+    font-family: var(--font-regular);
+    color: var(--dark-accent);
+}

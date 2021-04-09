@@ -1,4 +1,4 @@
-@import "../settings.css";
+@import "../design_system/00_design_system.css";
 
 
 .form-container {
@@ -6,7 +6,6 @@
     height: 100%;
     background-color: whitesmoke;
 }
-
 
 .custom-form {
     width: 40%;
@@ -19,7 +18,7 @@
 }
 
 .title {
-    font-family: var(--medium-font);
+    font-family: var(--font-medium);
     font-size: 36px;
 }
 
@@ -30,25 +29,25 @@ input, select {
     border: 2px solid #ECEAEA;
     border-radius: 5px;
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--dark);
 }
 
 .label {
-    font-family: var(--thin-font);
+    font-family: var(--font-regular);
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--dark);
 }
 
 .input {
-    font-family: var(--regular-font);
+    font-family: var(--font-regular);
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--dark);
 }
 
 .create-btn {
-    background-color: var(--main-accent);
+    background-color: var(--accent);
     color: whitesmoke;
-    font-family: var(--regular-font);
+    font-family: var(--font-regular);
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <title>Dashboard</title>
+
+    <div class="container-fluid dashboard-panel">
+
+        <!-- Top section: render info cards -->
+        <section class="row dashboard-section top-section">
+
+            <!-- Left/Top info card -->
+            <div class="col-md-4 card-info-column">
+                <div class="card-info">
+                    <div class="row row-head">
+                        <div class="col-9 col-head col-head-name my-auto m-0">
+                            <h6 class="m-0 card-title">Address</h6>
+                        </div>
+                        <div class="col-3 col-head col-head-icon my-auto">
+                            <i class="las la-globe info-card-icon icon-left"></i>
+                        </div>
+                    </div>
+                    <div class="row row-body">
+                        <h4>Address field xx</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left/Top info card -->
+            <div class="col-md-4 card-info-column">
+                <div class="card-info">
+                    <div class="row row-head">
+                        <div class="col-9 col-head col-head-name my-auto m-0">
+                            <h6 class="m-0 card-title">Capacity</h6>
+                        </div>
+                        <div class="col-3 col-head col-head-icon my-auto">
+                            <i class="las la-building info-card-icon icon-center"></i>
+                        </div>
+                    </div>
+                    <div class="row row-body">
+                        <h4>22</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left/Top info card -->
+            <div class="col-md-4 card-info-column">
+                <div class="card-info">
+                    <div class="row row-head">
+                        <div class="col-9 col-head col-head-name my-auto m-0">
+                            <h6 class="m-0 card-title">Occupied</h6>
+                        </div>
+                        <div class="col-3 col-head col-head-icon my-auto">
+                            <i class="las la-tasks info-card-icon icon-right"></i>
+                        </div>
+                    </div>
+                    <div class="row row-body">
+                        <h4>14</h4>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- end top section: render info cards -->
+
+        <!-- Second section: render apartment table -->
+        <section class="row dashboard-section second-section p-3">
+
+            <div class="col-md-8 table-col">
+                {% include "residential/tables/dashboard_info_table.html" %}
+            </div>
+
+        </section>
+        <!-- end second section: render apartment table -->
+
+    </div>
+
+{% endblock %}

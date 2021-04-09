@@ -1,0 +1,45 @@
+@import "system.css";
+
+* {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html, body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.content-panel {
+    margin-left: var(--sidebar);
+    margin-top: var(--topbar-height);
+    padding: 50px;
+    height: 100%;
+    width: calc(100% - var(--sidebar));
+    background-color: var(--background);
+}
+
+a {
+    text-decoration: none;
+}
+
+h4 {
+    font-family: var(--font-medium);
+    font-size: 24px;
+    color: var(--dark);
+}
+
+h5 {
+    font-family: var(--font-regular);
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 11px;
+    font-family: var(--font-regular);
+    text-transform: uppercase;
+    color: var(--dark);
+}

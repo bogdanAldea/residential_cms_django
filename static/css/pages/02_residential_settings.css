@@ -1,0 +1,50 @@
+@import "../design_system/00_design_system.css";
+
+
+/*================================================*/
+/*===           PILLS NAVIGATION              ====*/
+/*================================================*/
+
+.nav-pills .selector-pill-btn.active {
+    background-color: var(--accent);
+    font-size: 12px;
+}
+
+.nav-pills .selector-pill-btn {
+    color: var(--dark);
+    font-family: var(--font-regular);
+    font-size: 12px;
+}
+
+.table-tab {
+    margin-top: 50px;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: var(--shadows);
+}
+
+/*================================================*/
+/*===           STATUS ICONS                  ====*/
+/*================================================*/
+
+.status-icon-active, .status-icon-disabled {
+    font-size: 30px;
+}
+
+.status-icon-active {
+    color: lightseagreen;
+}
+
+.status-icon-disabled {
+    color: mediumvioletred;
+}
+
+.status-name {
+    align-self: center;
+}
+
+.util-branched {
+    padding: 0;
+}
+

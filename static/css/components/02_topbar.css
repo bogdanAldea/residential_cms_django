@@ -1,19 +1,47 @@
-@import url("../settings.css");
+@import "../design_system/system.css";
 
-.badge-notification {
-    color: white;
-    font-size: 10px;
+
+#top-bar-nav {
+    background-color: var(--light);
+    height: var(--topbar-height);
 }
 
-.message {
-    color: white;
+.navbar-brand {
+    background-color: var(--accent);
+    padding: 0;
+    margin: 0;
+    width: var(--sidebar);
+    height: var(--topbar-height);
+}
+
+#logo {
+    padding-left: 25px;
+}
+
+.app-logo {
+    fill: var(--light);
+}
+
+.app-name {
+    font-family: var(--font-bold);
+    color: var(--light);
+}
+
+.badge-notification {
+    color: var(--light);
+    font-size: 10px;
 }
 
 .notification-icon {
     font-size: 24px;
-    color: white;
+    color: var(--accent);
 }
 
-#main-navbar {
-    background-color: var(--main-accent);
+.message {
+    color: var(--dark);
+}
+
+.logged-username {
+    color: var(--accent);
+    font-family: var(--font-medium);
 }

@@ -1,52 +1,51 @@
-@import url("../settings.css");
-
+@import "../design_system/00_design_system.css";
 
 /*================================================*/
-/*===           TOP SECTION - CONTENT A       ====*/
+/*===           TOP SECTION: CARDS            ====*/
 /*================================================*/
-
-/*.row {*/
-/*    min-height: 130px;*/
-/*}*/
-
-.media {
-    align-items: center;
+.card-info {
+    background-color: white;
+    padding: 0 50px;
+    border-radius: 10px;
+    box-shadow: var(--shadows)
 }
 
-.top-card {
-    border: none;
-    border-radius: 0;
-    box-shadow:  var(--custom-shadows);
+.col-head-icon {
+    text-align: right;
+    font-size: 48px;
 }
 
-.card-left {
-    background-color: #6b4bf3;
-    color: white;
-}
-.card-center {
-    background-color: #009688;
+.icon-left {
+    color: var(--accent);
 }
 
-.card-right {
-    background-color: #EF4F4C;
+.icon-center {
+    color: darkred;
 }
 
-.info-card-icon {
-    font-size:36px;
-    color: white;
+.icon-right {
+    color: lightseagreen;
 }
 
-.info-card-text {
-    color: white;
+.row-body {
+    padding-bottom: 20px;
 }
 
-.info-card-text h3{
-    font-family: var(--thin-font);
-    font-size: 24px;
+/*================================================*/
+/*===           SECOND SECTION: INFO TABLE    ====*/
+/*================================================*/
+.second-section {
+    margin-top: 50px;
 }
 
-.info-card-text span {
-    font-family: var(--main-font);
-    font-size: 12px;
-    text-transform: uppercase;
+.table-col {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: var(--shadows);
+}
+
+.card-title {
+    text-transform: capitalize;
+    font-size: 14px;
 }

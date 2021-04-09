@@ -1,0 +1,29 @@
+@import "00_design_system.css";
+
+:root {
+
+    /* Font faces */
+    --font-thin     : "thin";
+    --font-light    : "light";
+    --font-medium   : "medium";
+    --font-regular  : "regular";
+    --font-semibold : "semibold";
+    --font-bold     : "bold";
+
+    /* Colours */
+    --accent        : #713BDB;
+    --dark-accent   : #6429D6;
+    --dark          : #575F7B;
+    --light         : #ffffff;
+    --background    : #F5F6FB;
+
+    /* Spacings, paddings, margins */
+    --sidebar: 220px;
+    --topbar-height: 70px;
+
+    /* Sidebar links font size */
+    --sidebar-link: 14px;
+
+    /* Table styling */
+    --shadows: 0 8px 8px -6px #CFD8EB;
+}

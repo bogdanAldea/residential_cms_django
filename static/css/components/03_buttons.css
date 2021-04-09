@@ -1,0 +1,26 @@
+@import "../design_system/system.css";
+
+/*  TOP BAR ELEMENTS */
+.logout-btn {
+    background-color: var(--accent);
+    color: var(--light);
+    font-size: 11px;
+    font-family: var(--font-regular);
+}
+
+.logout-btn:hover{
+    background-color: var(--dark-accent);
+    color: var(--light);
+}
+
+/*  TABLE ACTION BUTTON */
+.export-table-btn, .add-mutual-util-btn, .edit-util-btn {
+    font-size: 7px;
+    font-family: var(--font-medium);
+    background-color: var(--accent);
+    color: var(--light);
+}
+.export-table-btn:hover, .add-mutual-util-btn:hover {
+    background-color: var(--dark-accent);
+    color: var(--light);
+}
