@@ -1,80 +1,46 @@
 {% load static %}
 
-<!--<nav id="sidebarNav" class="collapse d-lg-block sidebar collapse">-->
-<!--    <div class="position-sticky">-->
-<!--        <div class="">-->
+<nav id="sidebar-menu" class="collapse d-lg-block sidebar collapse">
+    <div class="menu-list list-group list-group-flush">
 
-<!--            <a href="#" class="menu-link list-group-item list-group-item-action py-2" aria-current="true">-->
-<!--                <i class="fas fa-tachometer-alt fa-fw me-3"></i>-->
-<!--                <span>Main dashboard</span>-->
-<!--            </a>-->
-<!--            <a href="#" class="menu-link list-group-item list-group-item-action py-2" aria-current="true">-->
-<!--                <i class="fas fa-tachometer-alt fa-fw me-3"></i>-->
-<!--                <span>Main dashboard</span>-->
-<!--            </a>-->
-<!--            <a href="#" class="menu-link list-group-item list-group-item-action py-2" aria-current="true">-->
-<!--                <i class="fas fa-tachometer-alt fa-fw me-3"></i>-->
-<!--                <span>Main dashboard</span>-->
-<!--            </a>-->
-<!--            <a href="#" class="menu-link list-group-item list-group-item-action py-2" aria-current="true">-->
-<!--                <i class="fas fa-tachometer-alt fa-fw me-3"></i>-->
-<!--                <span>Main dashboard</span>-->
-<!--            </a>-->
+        <!--  Defined navbar menu links -->
+        {% url 'building:dashboard' as url %}
+        <a href="{{ url }}"
+           class="text-center nav-link list-group-item, list-group-item-action
+                 {% if request.path == url %}active{% endif %}">
+            <i class="menu-icon las la-igloo text-center"></i>
+            <h6 class="sidebar-menu-item">Dashboard</h6>
+        </a>
 
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
+        {% url 'building:residential-settings' as url%}
+        <a href="{{ url }}" class="nav-link list-group-item, list-group-item-action text-center
+                            {% if request.path == url %}active{% endif %}">
+                <i class="menu-icon las la-sliders-h"></i>
+            <h6 class="sidebar-menu-item">Settings</h6>
+        </a>
 
-<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse">
-    <div class="position-sticky">
+        <a href="#" class="nav-link list-group-item, list-group-item-action text-center">
+                <i class="menu-icon las la-wave-square"></i>
+            <h6 class="sidebar-menu-item">Main Counters</h6>
+        </a>
 
-        <div class="menu-list list-group list-group-flush">
+        <a href="#" class="nav-link list-group-item, list-group-item-action text-center">
+                    <i class="menu-icon lab la-cc-mastercard"></i>
+            <h6 class="sidebar-menu-item">Payments</h6>
+        </a>
 
-            <div class="section-title">
-                <h5>Menu</h5>
-            </div>
+{#        <div class="sidebar-footer"></div>#}
+{#            <div class="nav-section-label">#}
+{#                <h6 class="nav-label">Powered by</h6>#}
+{#            </div>#}
+{##}
+{#            <div class="powered-by-container mt-4">#}
+{#                 <i class="tech-icon lab la-python me-2"></i>#}
+{#                 <i class="tech-icon lab la-bootstrap me-2"></i>#}
+{#                 <i class="tech-icon lab la-html5 me-2"></i>#}
+{#                 <i class="tech-icon lab la-css3 me-2"></i>#}
+{#            </div>#}
+{#        </div>#}
 
-            {% url 'building:dashboard' as url %}
-            <a href="{{ url }}"
-               class="nav-link list-group-item list-group-item-action py-2 {% if request.path == url %}active{% endif %}"
-               aria-current="true">
-                    <i class="las la-igloo me-3"></i>
-                    <span>Dashboard</span>
-            </a>
-
-            {% url 'building:settings' as url %}
-            <a href="{{ url }}"
-               class="nav-link list-group-item list-group-item-action py-2 {% if request.path == url %}active{% endif %}">
-                <i class="las la-sliders-h me-3"></i>
-                <span>Settings</span>
-            </a>
-
-            {% url 'building:counters' as url %}
-            <a href="{{ url }}"
-               class="nav-link list-group-item list-group-item-action py-2 {% if request.path == url %}active{% endif %}">
-                <i class="las la-wave-square me-3"></i>
-                <span>Counters</span>
-            </a>
-
-            {% url 'building:payments' as url %}
-            <a href="{{ url }}"
-                class="nav-link list-group-item list-group-item-action py-2 {% if request.path == url %}active{% endif %}">
-                    <i class="lab la-cc-mastercard me-3"></i>
-                    <span>Payments</span>
-            </a>
-
-        </div>
-
-        <div class="sidebar-footer">
-             <div class="section-title">
-                <h5>Powered by</h5>
-                 <div class="powered-by-container mt-4">
-                     <i class="tech-icon lab la-python me-2"></i>
-                     <i class="tech-icon lab la-bootstrap me-2"></i>
-                     <i class="tech-icon lab la-html5 me-2"></i>
-                     <i class="tech-icon lab la-css3 me-2"></i>
-                 </div>
-            </div>
-        </div>
     </div>
-  </nav>
+</nav>

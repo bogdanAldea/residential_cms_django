@@ -1,36 +1,39 @@
 {% load static %}
 
- <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top">
 
-    <div class="container-fluid">
 
-        <div class="navbar-brand mx-3">
-            <a href="#">
-                <svg width="45" height="45" viewBox="0 0 59 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M46.7214 18.0892V20.4378C52.5874 23.8517 56.3244 28.971 56.3244 34.6845C56.3244
-                    41.2169 51.4397 46.9722 44.0709 50.2892V33.0645L36.1217 30.0284V52.7066C35.2551 52.8596 34.3713
-                    52.9834 33.4737 53.076V18.1005L25.5263 15.0627V53.0754C24.6278 52.9828 23.744 52.859 22.8766
+<nav id="top-bar-nav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid m-0 p-0">
+
+        <!-- Render app logo -->
+        <div class="navbar-brand">
+            <a id="logo" href="{% url 'residential:dashboard' %}">
+                <svg class="app-logo" width="40" height="40" viewBox="0 0 59 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M46.7214 18.0892V20.4378C52.5874 23.8517 56.3244 28.971 56.3244 34.6845C56.3244 41.2169
+                    51.4397 46.9722 44.0709 50.2892V33.0645L36.1217 30.0284V52.7066C35.2551 52.8596 34.3713 52.9834
+                    33.4737 53.076V18.1005L25.5263 15.0627V53.0754C24.6278 52.9828 23.744 52.859 22.8766
                     52.706V3.16649L14.9291 0.129822V50.2898C7.55942 46.9722 2.67559 41.2163 2.67559 34.6845C2.67559
                     28.971 6.41175 23.8517 12.2794 20.4378V18.0892C4.84761 21.8061 0 27.8597 0 34.6845C0 45.9608
                     13.2339 55.1353 29.4996 55.1353C45.7661 55.1353 59 45.9608 59 34.6845C58.9991 27.8597 54.1515
-                    21.8061 46.7214 18.0892Z" fill="#f5f5f5"/>
+                    21.8061 46.7214 18.0892Z"/>
                 </svg>
-                <span class="brand-name">CMS App</span>
+                <span class="app-name">CMS App</span>
             </a>
         </div>
+        <!-- end render app logo -->
 
         <!-- Toggle button -->
         <button class="navbar-toggler" type="button"
               data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
               aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- end toggle button -->
 
-      <!-- Right links -->
-        {% if request.user.is_authenticated %}
-            <ul class="navbar-nav ms-auto d-flex flex-row">
+        <!-- Render top bar links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
 
-           <!-- Notification dropdown -->
+            <!--  Notification dropdown -->
             <li class="nav-item dropdown me-5">
                 <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
                    href="#" id="navbarDropdownMenuLink"
@@ -49,7 +52,6 @@
             </li>
 
             <!-- Welcome message -->
-
             <li class="nav-item dropdown">
                 <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow message"
                     href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
@@ -77,11 +79,12 @@
             </li>
 
             <!-- Log out button -->
-            <li class="nav-item me-3">
+            <li class="nav-item">
                 <a href="{% url 'building:logout' %}" class="btn logout-btn">Logout &rarr;</a>
             </li>
+
         </ul>
-        {% endif %}
+        <!-- end render top bar links -->
+
     </div>
-    <!-- Container wrapper -->
-  </nav>
+</nav>
