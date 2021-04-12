@@ -27,7 +27,7 @@
             <td>{{ supply.contract_starts}}</td>
             <td>{{ supply.contract_ends}}</td>
             <td>{{ supply.tax_or_wage }}</td>
-            <td><a href="#" class="btn edit-util-btn">Edit &rarr;</a></td>
+            <td><a href="{% url 'residential:update-utility' supply.pk %}" class="btn edit-util-btn">Edit &rarr;</a></td>
         </tr>
     {% endfor %}
     </tbody>

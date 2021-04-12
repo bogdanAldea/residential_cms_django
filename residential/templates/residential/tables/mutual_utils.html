@@ -33,7 +33,7 @@
         <th>{{ util.contract_ends}}</th>
         <th>{{ util.get_tax_type_display}}</th>
         <th>{{ util.tax_or_wage }}</th>
-        <th><a href="#" class="btn edit-util-btn">Edit &rarr;</a></th>
+        <th><a href="{% url 'residential:update-utility' util.pk %}" class="btn edit-util-btn">Edit &rarr;</a></th>
     </tr>
     {% endfor %}
     </tbody>
