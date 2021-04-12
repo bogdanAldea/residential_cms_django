@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.forms import inlineformset_factory
+from apartment.models import Apartment, IndividualUtil
 from .forms import *
 
 """DEFINED VIEWS FOR SIDEBAR/MAIN MENU LINKS"""
@@ -112,7 +114,7 @@ def LogoutUser(request):
     return  redirect('building:login')
 
 
-"""DEFINE VIEWS THAT HANDLE RESIDENTIAL BUSINESS LOGIC"""
+"""DEFINE VIEWS THAT HANDLE RESIDENTIAL C.R.U.D. BUSINESS LOGIC"""
 def CreateResidential(request):
     """
     Defined View that handles residential building creation.
@@ -157,3 +159,41 @@ def CreateUtility(request):
 
     context = {'form': form}
     return render(request, 'residential/forms/create_utility.html', context)
+
+
+def UpdateUtilStatus(request, pk):
+    """
+    Defined view that handles the update of selected apartment's utility status
+    through a formset.
+    """
+
+    # retrieve currently logged user and the building he's managing
+    logged_admin = User.objects.get(username=request.user.username)
+    building = Building.objects.get(admin=logged_admin)
+
+    # defined the formset that takes the apartment model as the parent argument
+    # and the individual utility model as the child argument
+    UtilFormset = inlineformset_factory(
+        parent_model=Apartment, model=IndividualUtil,
+        fields=('status',), extra=0
+    )
+
+    # select apartment by accessing its primary key
+    apartment = building.apartment_set.get(id=pk)
+
+    # define formset by passing the queried apartment object
+    formset = UtilFormset(instance=apartment)
+    if request.method == 'POST':
+        # pass the request method to the defined formset
+        formset = UtilFormset(request.POST, instance=apartment)
+        if formset.is_valid():
+            formset.save()
+            # redirect suer back to the settings page
+            return redirect('residential:residential-settings')
+
+    # define context data to render into the template
+    context = {
+        'apartment': apartment,
+        'formset': formset
+    }
+    return render(request, 'residential/forms/update_status.html', context)
