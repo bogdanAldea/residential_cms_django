@@ -1,6 +1,7 @@
 {% extends 'form.html' %}
 
 {% block content %}
+
     <form action="" method="POST" class="custom-form">
         {% csrf_token %}
 
@@ -9,18 +10,13 @@
 
         <!-- Render form title -->
         <div class="form-title text-center mb-5">
-            <h1 class="title">Add new utility.</h1>
+            <h1 class="title">Update Utility.</h1>
         </div>
 
         <!-- Render form fields -->
         <div class="row field-row mb-4">
             <div class="field label col-md-12"><label for="">Utility Name</label></div>
             <div class="field input col-md-12">{{ form.name }}</div>
-        </div>
-
-        <div class="row field-row mb-4">
-            <div class="field label col-md-12"><label for="">Utility Type</label></div>
-            <div class="field input col-md-12">{{ form.util_type }}</div>
         </div>
 
         <div class="row field-row apartments-field-row mb-4">
@@ -45,9 +41,11 @@
 
         <div class="row field-row apartments-field-row mt-5">
             <div class="col-md-12">
-                <button type="submit" class="col-md-12 btn create-btn">Add utility &rarr;</button>
+                <button type="submit" class="col-md-12 btn create-btn">Update &rarr;</button>
             </div>
         </div>
 
+
     </form>
+
 {% endblock %}

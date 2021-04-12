@@ -1,64 +1,15 @@
-{% load static %}
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-      <!-- MDB -->
-      <link
-          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
-          rel="stylesheet"/>
-
-      <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
-
-      <!-- Font Awesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      rel="stylesheet"/>
-
-      <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
-
-  </head>
-  <body>
-
-    <div class="container-fluid form-container">
-        <div class="row form-row justify-content-center align-items-center p-0 m-0">
+{% extends 'form.html' %}
+{% block content %}
 
             <form action="" method="POST" class="residential-form custom-form">
                 {% csrf_token %}
 
-                <div class="logo-dark text-center mb-3">
-                    <svg class="app-logo-dark" width="40" height="40" viewBox="0 0 59 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M46.7214 18.0892V20.4378C52.5874 23.8517 56.3244 28.971 56.3244 34.6845C56.3244 41.2169
-                    51.4397 46.9722 44.0709 50.2892V33.0645L36.1217 30.0284V52.7066C35.2551 52.8596 34.3713 52.9834
-                    33.4737 53.076V18.1005L25.5263 15.0627V53.0754C24.6278 52.9828 23.744 52.859 22.8766
-                    52.706V3.16649L14.9291 0.129822V50.2898C7.55942 46.9722 2.67559 41.2163 2.67559 34.6845C2.67559
-                    28.971 6.41175 23.8517 12.2794 20.4378V18.0892C4.84761 21.8061 0 27.8597 0 34.6845C0 45.9608
-                    13.2339 55.1353 29.4996 55.1353C45.7661 55.1353 59 45.9608 59 34.6845C58.9991 27.8597 54.1515
-                    21.8061 46.7214 18.0892Z"/>
-                    </svg>
-                    <span class="app-name-dark">CMS App</span>
-                </div>
+                {% include 'app_logo.html' %}
+
                 <div class="form-title text-center mb-5">
                     <h1 class="title">Create your residential.</h1>
                 </div>
 
-                <div class="row field-row admin-field-row mb-4">
-                    <div class="field label admin-label-field col-md-12"><label for="">Admin</label></div>
-                    <div class="field input admin-input-field col-md-12">{{ form.admin }}</div>
-                </div>
                 <div class="row field-row address-field-row mb-4">
                     <div class="field label address-label-field col-md-12"><label for="">Address</label></div>
                     <div class="field input address-input-field col-md-12">{{ form.address }}</div>
@@ -73,26 +24,4 @@
                     </div>
                 </div>
             </form>
-
-
-
-        </div>
-    </div>
-
-    <!-- MDB -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js">
-
-    </script>
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    -->
-  </body>
-</html>
+{% endblock %}
