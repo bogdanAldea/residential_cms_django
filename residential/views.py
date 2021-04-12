@@ -192,9 +192,13 @@ def UpdateUtilStatus(request, pk):
             return redirect('residential:residential-settings')
 
     # define context data to render into the template
+    form_util_names = ['Cold Water', 'Hot Water', 'Gas Power', 'Heating Power']
+    form_data = zip(form_util_names, formset)
+
     context = {
         'apartment': apartment,
-        'formset': formset
+        'form_data': form_data,
+        'formset': formset,
     }
     return render(request, 'residential/forms/update_status.html', context)
 
