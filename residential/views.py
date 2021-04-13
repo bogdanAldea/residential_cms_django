@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import Group
+from django.contrib.auth.decorators import login_required
 from django.forms import inlineformset_factory
 from apartment.models import Apartment, IndividualUtil
 from .forms import *
+from .decorators import *
 
 """DEFINED VIEWS FOR SIDEBAR/MAIN MENU LINKS"""
+@login_required(login_url='residential:login')
 def DashboardPage(request):
     """
     Defined view function that handles the rendering of the data required by the
@@ -34,7 +38,7 @@ def DashboardPage(request):
 
     return render(request, 'residential/menu/dashboard.html', context)
 
-
+@login_required(login_url='residential:login')
 def SettingsPage(request):
     """
     Defined view that renders data for the building settings page.
@@ -62,20 +66,26 @@ def SettingsPage(request):
 
 
 """DEFINE VIEWS FOR ADMIN USER AUTHENTICATION"""
+@login_required(login_url='residential:login')
+@unauthenticated_user
 def RegisterPage(request):
     """
     Defined view that handles new user registration with admin privileges.
     """
 
+    group = Group.objects.get(name='administrator')
+
     # instantiate new form for user registration
-    form = UserCreationForm()
+    form = CreateUSerForm()
 
     # check type of method request
     if request.method == 'POST':
         # pass the request method to the form
-        form = UserCreationForm(request.POST)
+        form = CreateUSerForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            user.groups.add(group)
+            user.save()
             # redirect user to login page after registration form is submitted
             return redirect('building:login')
 
@@ -84,6 +94,7 @@ def RegisterPage(request):
     return render(request, 'residential/registration/register.html', context)
 
 
+@unauthenticated_user
 def LoginPage(request):
     """
     Defined view that handles the user login (user with admin privileges).
@@ -111,10 +122,11 @@ def LogoutUser(request):
     Defined view that handles user's logout.
     """
     logout(request)
-    return  redirect('building:login')
+    return redirect('building:login')
 
 
 """DEFINE VIEWS THAT HANDLE RESIDENTIAL C.R.U.D. BUSINESS LOGIC"""
+@login_required(login_url='residential:login')
 def CreateResidential(request):
     """
     Defined View that handles residential building creation.
@@ -134,6 +146,7 @@ def CreateResidential(request):
     return render(request, 'residential/forms/create_residential.html', context)
 
 
+@login_required(login_url='residential:login')
 def CreateUtility(request):
     """
     Defined view that handles creation of a new general utility. After a new utility instance is created,
@@ -161,6 +174,7 @@ def CreateUtility(request):
     return render(request, 'residential/forms/create_utility.html', context)
 
 
+@login_required(login_url='residential:login')
 def UpdateUtilStatus(request, pk):
     """
     Defined view that handles the update of selected apartment's utility status
@@ -203,6 +217,7 @@ def UpdateUtilStatus(request, pk):
     return render(request, 'residential/forms/update_status.html', context)
 
 
+@login_required(login_url='residential:login')
 def UpdateUtilityGeneral(request, pk):
     """
     Defined view that handles the update of utilities that belong only to the
