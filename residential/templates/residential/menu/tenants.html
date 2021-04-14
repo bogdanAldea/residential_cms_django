@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <title>Tenants Settings</title>
+
+    <div class="container-fluid tenants-panel">
+        {% include 'residential/tables/assign_tenant.html' %}
+    </div>
+
+{% endblock %}
