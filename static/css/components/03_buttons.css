@@ -14,7 +14,7 @@
 }
 
 /*  TABLE ACTION BUTTON */
-.export-table-btn, .add-mutual-util-btn, .edit-util-btn {
+.export-table-btn, .add-mutual-util-btn, .edit-util-btn, .tenant-btn {
     font-size: 7px;
     font-family: var(--font-medium);
     background-color: var(--accent);
@@ -23,4 +23,12 @@
 .export-table-btn:hover, .add-mutual-util-btn:hover {
     background-color: var(--dark-accent);
     color: var(--light);
+}
+
+.tenant-btn {
+    min-width: 80px;
+}
+
+.add-tenant-btn {
+    background-color: orangered;
 }

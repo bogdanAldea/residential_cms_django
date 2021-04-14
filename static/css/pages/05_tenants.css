@@ -1,0 +1,9 @@
+@import "../design_system/00_design_system.css";
+
+
+.tenants-panel {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: var(--shadows);
+}

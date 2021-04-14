@@ -4,7 +4,7 @@
     <div class="menu-list list-group list-group-flush">
 
         <!--  Defined navbar menu links -->
-        {% url 'building:dashboard' as url %}
+        {% url 'residential:dashboard' as url %}
         <a href="{{ url }}"
            class="text-center nav-link list-group-item, list-group-item-action
                  {% if request.path == url %}active{% endif %}">
@@ -12,7 +12,7 @@
             <h6 class="sidebar-menu-item">Dashboard</h6>
         </a>
 
-        {% url 'building:residential-settings' as url%}
+        {% url 'residential:residential-settings' as url%}
         <a href="{{ url }}" class="nav-link list-group-item, list-group-item-action text-center
                             {% if request.path == url %}active{% endif %}">
                 <i class="menu-icon las la-sliders-h"></i>
@@ -27,6 +27,13 @@
         <a href="#" class="nav-link list-group-item, list-group-item-action text-center">
                     <i class="menu-icon lab la-cc-mastercard"></i>
             <h6 class="sidebar-menu-item">Payments</h6>
+        </a>
+
+        {% url 'residential:tenants'  as url %}
+        <a href="{{ url }}" class="nav-link list-group-item, list-group-item-action text-center
+                            {% if request.path == url %}active{% endif %}">
+                    <i class="menu-icon lab la-cc-mastercard"></i>
+            <h6 class="sidebar-menu-item">Tenants</h6>
         </a>
 
 {#        <div class="sidebar-footer"></div>#}
