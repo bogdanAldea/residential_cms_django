@@ -1,0 +1,34 @@
+{% load static %}
+
+<table class="table table-borderless general-table">
+
+    <thead class="general-table-head">
+        <tr class="general-table-title-row">
+            <th class="table-title-col" colspan="7">Consumption Indexing</th>
+        </tr>
+
+        <tr>
+            <th>Apartment</th>
+            <th>Phone</th>
+            <th>Cold Water</th>
+            <th>Gas Power</th>
+            <th>Hot Water</th>
+            <th>Heating Power</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody class="general-table-body">
+        {% for apartment in building.apartment_set.all %}
+            <tr class="general-table-row">
+                <td>{{ apartment.pk }}</td>
+                <td>{{ apartment.tenant.phone }}</td>
+            {% for utility in apartment.individualutil_set.all %}
+                <td>{{ utility.index_counter }}</td>
+            {% endfor %}
+                <td><a href="{% url 'residential:update_status' apartment.pk %}" class="btn edit-util-btn">Edit &rarr;</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
