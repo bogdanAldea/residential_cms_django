@@ -37,7 +37,7 @@ def UpdateUtilStatus(request, pk):
         if formset.is_valid():
             formset.save()
             # redirect suer back to the settings page
-            return redirect('residential:residential-settings')
+            return redirect('residential:apartments')
 
     # define context data to render into the template
     form_util_names = ['Cold Water', 'Hot Water', 'Gas Power', 'Heating Power']

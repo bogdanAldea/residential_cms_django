@@ -60,7 +60,6 @@ def SettingsPage(request):
     context = {
         'power_supplies': power_supplies,
         'mutual_utils': mutual_utils,
-        'apartments': apartments
     }
     return render(request, 'residential/menu/residential_settings.html', context)
 
@@ -87,6 +86,8 @@ def PaymentsPage(request):
 
     # retrieve building managed by the currently logged administrator.
     _, building = get_logged(request)
+
+
 
     context = {'building': building}
     return render(request, 'residential/menu/payments.html', context)
