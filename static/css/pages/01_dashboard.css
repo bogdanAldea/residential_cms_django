@@ -38,12 +38,7 @@
     margin-top: 50px;
 }
 
-.table-col {
-    background-color: white;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: var(--shadows);
-}
+
 
 .card-title {
     text-transform: capitalize;

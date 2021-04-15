@@ -4,6 +4,13 @@
 /*================================================*/
 /*===           GENERAL TABLE                 ====*/
 /*================================================*/
+.table-content {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: var(--shadows);
+}
+
 .general-table {
     border-collapse: separate;
     border-spacing: 1px 10px;
