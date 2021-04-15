@@ -34,11 +34,27 @@ class Apartment(models.Model):
     tenant                  = models.OneToOneField(Tenant, null=True, blank=True, on_delete=models.SET_NULL)
     persons                 = models.PositiveIntegerField(default=0)
     payment_status          = models.BooleanField(default=True, null=True,  choices=PAYMENT_STATUS)
-    current_month_payment   = models.FloatField(default=0)
     debt                    = models.FloatField(default=0)
 
     def __str__(self):
         return f'Apartment {self.id}'
+
+    def get_total_individual_utils(self):
+        total = 0
+        for util in self.individualutil_set.all():
+            total += util.monthly_payment
+        return total
+
+    def get_total_mutual_utils(self):
+        total = 0
+        for util in self.mutualutil_set.all():
+            total += util.monthly_payment
+        return total
+
+    def current_month_payment(self):
+        mutual      = self.get_total_mutual_utils()
+        individual  = self.get_total_individual_utils()
+        return mutual + individual
 
 
 class MutualUtil(models.Model):
