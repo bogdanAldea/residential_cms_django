@@ -25,6 +25,12 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-family: var(--font-regular);
+    font-size: 12px;
+    color: var(--dark);
+}
+
 h4 {
     font-family: var(--font-medium);
     font-size: 24px;
