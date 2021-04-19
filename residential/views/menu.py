@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from residential.models import User, Building
+from residential.decorators import allowed_users
 
 def get_logged(request):
     logged_admin = User.objects.get(username=request.user.username)
@@ -8,6 +9,7 @@ def get_logged(request):
     return logged_admin, building
 
 
+@allowed_users(user_roles=['administrator'], redirect_link='')
 @login_required(login_url='residential:login')
 def DashboardPage(request):
     """
@@ -39,6 +41,7 @@ def DashboardPage(request):
     return render(request, 'residential/menu/dashboard.html', context)
 
 
+@allowed_users(user_roles=['administrator'], redirect_link='')
 @login_required(login_url='residential:login')
 def SettingsPage(request):
     """
@@ -64,6 +67,7 @@ def SettingsPage(request):
     return render(request, 'residential/menu/residential_settings.html', context)
 
 
+@allowed_users(user_roles=['administrator'], redirect_link='')
 @login_required(login_url='residential:login')
 def ApartmentsPage(request):
     """
@@ -77,6 +81,7 @@ def ApartmentsPage(request):
     return render(request, 'residential/menu/apartments.html', context)
 
 
+@allowed_users(user_roles=['administrator'], redirect_link='')
 @login_required(login_url='residential:login')
 def PaymentsPage(request):
     """
