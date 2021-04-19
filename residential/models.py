@@ -38,6 +38,10 @@ class Building(models.Model):
     def __str__(self):
         return self.address
 
+    @property
+    def get_capacity(self):
+        return self.apartments_capacity
+
     def total_expenses(self):
         total_expenses = 0
         for apartment in self.apartment_set.all():
@@ -86,6 +90,14 @@ class Utility(models.Model):
 
     def __str__(self):
         return f'{self.name}: {self.building}'
+
+    @property
+    def get_util_type(self):
+        return self.util_type
+
+    @property
+    def get_tax_wage(self):
+        return self.tax_or_wage
 
 
 class Feature(models.Model):
