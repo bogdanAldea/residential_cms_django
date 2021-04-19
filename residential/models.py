@@ -51,7 +51,7 @@ class Building(models.Model):
     def profit_loss_report(self):
         total       = self.total_expenses()
         committed   = self.committed_expenses()
-        return total - committed
+        return float("{:.2f}".format(total - committed))
 
 
 class Utility(models.Model):
