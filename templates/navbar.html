@@ -19,19 +19,23 @@
             <h6 class="sidebar-menu-item">Settings</h6>
         </a>
 
-        <a href="#" class="nav-link list-group-item, list-group-item-action text-center">
+        {% url 'residential:main_counters' as url %}
+        <a href="{{ url }}" class="nav-link list-group-item, list-group-item-action text-center
+                            {% if request.path == url %}active{% endif %}">
                 <i class="menu-icon las la-wave-square"></i>
             <h6 class="sidebar-menu-item">Main Counters</h6>
         </a>
 
-        {% url 'residential:tenants'  as url %}
+        {% url 'residential:apartments'  as url %}
             <a href="{{ url }}" class="nav-link list-group-item, list-group-item-action text-center
                                 {% if request.path == url %}active{% endif %}">
                         <i class="menu-icon las la-door-closed"></i>
                 <h6 class="sidebar-menu-item">Apartments</h6>
             </a>
 
-        <a href="#" class="nav-link list-group-item, list-group-item-action text-center">
+        {% url 'residential:payments' as url %}
+        <a href="{{ url }}" class="nav-link list-group-item, list-group-item-action text-center
+                            {% if request.path == url %}active{% endif %}">
                     <i class="menu-icon lab la-cc-mastercard"></i>
             <h6 class="sidebar-menu-item">Payments</h6>
         </a>
