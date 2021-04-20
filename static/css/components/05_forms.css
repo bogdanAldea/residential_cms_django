@@ -58,3 +58,7 @@ input, select {
 .util-creation-form {
     margin-top: calc(var(--topbar-height) + 50px);
 }
+
+.main-counters-form {
+    width: 70% !important;
+}
