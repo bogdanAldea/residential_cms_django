@@ -1,0 +1,39 @@
+{% extends 'form.html' %}
+
+{% block content %}
+
+    <form action="" method="POST" class="custom-form main-counters-form">
+        {% csrf_token %}
+
+        <table class="table table-borderless general-table">
+
+            <thead class="general-table-head">
+                <tr class="general-table-title-row">
+                    <th class="table-title-col" colspan="4">Main Index Counters</th>
+                </tr>
+
+                <tr>
+                    <th>Utility</th>
+                    <th>New index</th>
+                    <th>Last Index</th>
+                    <th>Since last month</th>
+                </tr>
+            </thead>
+
+            <tbody class="general-table-body">
+                {% for field in form %}
+                    <tr class="general-table-row">
+                        <td>{{ field.label }}</td>
+                        <td>{{ field }}</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+        <button class="btn edit-util-btn" type="submit">Update &rarr;</button>
+    </form>
+
+{% endblock content %}
