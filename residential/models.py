@@ -19,21 +19,17 @@ class Building(models.Model):
     address                 = models.CharField(max_length=100, null=True)
     apartments_capacity     = models.PositiveIntegerField()
 
-    # cold water main index & payment
+    # cold water main index
     cold_water_main_index       = models.IntegerField(default=0, null=True)
-    cold_water_main_payment     = models.FloatField(default=0, null=True)
 
-    # hot water main index & payment
+    # hot water main index
     hot_water_main_index        = models.IntegerField(default=0, null=True)
-    hot_water_main_payment      = models.FloatField(default=0, null=True)
 
-    # gas power main index & payment
+    # gas power main index
     gas_power_main_index        = models.IntegerField(default=0, null=True)
-    gas_power_main_payment      = models.FloatField(default=0, null=True)
 
-    # heating power main index & payment
+    # heating power main index
     heating_power_main_index    = models.IntegerField(default=0, null=True)
-    heating_power_main_payment    = models.FloatField(default=0, null=True)
 
     def __str__(self):
         return self.address
