@@ -25,7 +25,7 @@
         <tr class="general-table-row">
             <td>{{ apartment.pk }}</td>
             {% for i_util in apartment.individualutil_set.all %}
-                <td>{{ i_util.monthly_payment }}</td>
+                <td>{{ i_util.get_monthly_payment }}</td>
             {% endfor %}
             <td>{{ apartment.get_total_mutual_utils }}</td>
             <td>{{ apartment.current_month_payment }}</td>

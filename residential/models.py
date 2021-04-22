@@ -19,18 +19,6 @@ class Building(models.Model):
     address                 = models.CharField(max_length=100, null=True)
     apartments_capacity     = models.PositiveIntegerField()
 
-    # cold water main index
-    cold_water_main_index       = models.IntegerField(default=0, null=True)
-
-    # hot water main index
-    hot_water_main_index        = models.IntegerField(default=0, null=True)
-
-    # gas power main index
-    gas_power_main_index        = models.IntegerField(default=0, null=True)
-
-    # heating power main index
-    heating_power_main_index    = models.IntegerField(default=0, null=True)
-
     def __str__(self):
         return self.address
 
@@ -43,15 +31,6 @@ class Building(models.Model):
         for apartment in self.apartment_set.all():
             total_expenses += apartment.current_month_payment()
         return total_expenses
-
-    def committed_expenses(self):
-        return self.cold_water_main_payment     + self.hot_water_main_payment + \
-               self.gas_power_main_payment      + self.heating_power_main_payment
-
-    def profit_loss_report(self):
-        total       = self.total_expenses()
-        committed   = self.committed_expenses()
-        return float("{:.2f}".format(total - committed))
 
 
 class Utility(models.Model):
@@ -94,6 +73,14 @@ class Utility(models.Model):
     @property
     def get_tax_wage(self):
         return self.tax_or_wage
+
+
+class MainUtil(models.Model):
+    util = models.ForeignKey(Utility, on_delete=models.CASCADE)
+    index_counter = models.IntegerField(default=0, null=True)
+
+    def __str__(self):
+        return f'{self.util.name} counter'
 
 
 class Feature(models.Model):

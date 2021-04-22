@@ -1,9 +1,9 @@
 from django.db.models.signals import post_save
-from residential.models import Building, Utility, User
-from apartment.models import Apartment, IndividualUtil, MutualUtil, Tenant
+from residential.models import Building, Utility, MainUtil
+from apartment.models import Apartment, IndividualUtil, MutualUtil
 
 
-def generate_apartments(sender, instance, created, **kwargs):
+def init_building(sender, instance, created, **kwargs):
     """
     Signal listens for a new building instance being created.
     When new instance was created, the signal triggers function and creates a given number of apartments
@@ -27,6 +27,9 @@ def generate_apartments(sender, instance, created, **kwargs):
         # list of utility objects created above filtered by the instance of the sender(newly created object)
         utilities = Utility.objects.filter(building=instance)
 
+        for util in utilities:
+            MainUtil.objects.create(util=util)
+
         # create new apartment objects
         for number in range(1, apartments_to_create+1):
             apartment = Apartment.objects.create(id=number, building=instance)
@@ -37,7 +40,7 @@ def generate_apartments(sender, instance, created, **kwargs):
 
 
 # trigger function at the post save action, when a new building objects is created
-post_save.connect(generate_apartments, sender=Building)
+post_save.connect(init_building, sender=Building)
 
 
 def generate_utils(sender, instance, created, **kwargs):

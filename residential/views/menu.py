@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
+from django.forms import inlineformset_factory
 from django.contrib.auth.decorators import login_required
-from residential.models import User, Building
+from residential.models import User, Building, MainUtil, Utility
 from residential.decorators import allowed_users
-from residential.forms import ResidentialMainCounters
+from residential.forms import UpdateMainUtil
 
 def get_logged(request):
     logged_admin = User.objects.get(username=request.user.username)
@@ -72,21 +73,16 @@ def SettingsPage(request):
 @login_required(login_url='residential:login')
 def MainCountersPage(request):
     """
-    Defined view that handles the update of main utility index counters
-    that stores the index consumption of the entre building.
+    Defined view that lists all utilities used by the building that handles the update of their
+    index counters via forms.
     """
 
-    # retrieve building managed by the currently logged user
     _, building = get_logged(request)
 
-    form = ResidentialMainCounters(instance=building)
-    if request.method == 'POST':
-        form = ResidentialMainCounters(request.POST, instance=building)
-        if form.is_valid():
-            form.save()
-            return redirect('residential:main_counters')
+    # queryset of buildings main utility counters
+    utils_counters = MainUtil.objects.filter(util__building=building)
 
-    context = {'form': form}
+    context = {'counters': utils_counters}
     return render(request, 'residential/menu/main_counters.html', context)
 
 

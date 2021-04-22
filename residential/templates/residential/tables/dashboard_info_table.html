@@ -19,7 +19,7 @@
         <tr class="general-table-row">
             <td>{{ apartment.id }}</td>
             <td>{{ apartment.persons }}</td>
-            <td>{{ apartment.current_month_payment }}</td>
+            <td>{{ apartment.get_monthly_payment }}</td>
             <td>{{ apartment.get_payment_status_display }}</td>
         </tr>
     {% endfor %}

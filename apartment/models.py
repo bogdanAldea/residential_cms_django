@@ -46,13 +46,13 @@ class Apartment(models.Model):
     def get_total_individual_utils(self):
         total = 0
         for util in self.individualutil_set.all():
-            total += util.monthly_payment
+            total += util.get_monthly_payment()
         return total
 
     def get_total_mutual_utils(self):
         total = 0
         for util in self.mutualutil_set.all():
-            total += util.monthly_payment
+            total += util.get_monthly_payment()
         return total
 
     def current_month_payment(self):
@@ -66,6 +66,7 @@ class MutualUtil(models.Model):
     Defines mutual utility model. Each model points to a created utility object
     with the pre defined type of 'mutual'.
     """
+    ...
 
     apartment       = models.ForeignKey(Apartment, null=True, on_delete=models.CASCADE)
     util            = models.ForeignKey(Utility, null=True, on_delete=models.CASCADE)
@@ -76,7 +77,6 @@ class MutualUtil(models.Model):
     def get_monthly_payment(self):
         util_type   = self.util.get_util_type
         tax_wage    = self.util.get_tax_wage
-
         persons     = self.apartment.get_persons
         capacity    = self.apartment.building.get_capacity
 
@@ -98,6 +98,7 @@ class IndividualUtil(models.Model):
     Defines individual utility model. Each model points to a created utility object
     with the pre defined type of 'individual'.
     """
+    ...
 
     STATUS = (
         (True, 'Active'),
