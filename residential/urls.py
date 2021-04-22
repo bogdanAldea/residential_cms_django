@@ -9,7 +9,7 @@ urlpatterns = [
     # sidebar menu urls
     path('', menu.DashboardPage, name='dashboard'),
     path('settings/', menu.SettingsPage, name='residential-settings'),
-    path('main-counters', menu.MainCountersPage, name='main_counters'),
+    path('main-counters/', menu.MainCountersPage, name='main_counters'),
     path('apartments/', menu.ApartmentsPage, name='apartments'),
     path('payments/', menu.PaymentsPage, name='payments'),
 
@@ -26,5 +26,8 @@ urlpatterns = [
     # crud operations: update
     path('utility/apartment-<int:pk>/status-update/', update.UpdateUtilStatus, name='update_status'),
     path('utility/apartment-<int:pk>/update/', update.UpdateUtilityGeneral, name='update-utility'),
-    path('apartment-<int:pk>/update/', update.UpdateTenant, name='update-tenant'),
+
+    path('counter/<int:pk>/update', update.UpdateMainCounters, name='update-main-counter'),
+
+    path('apartment-<int:pk>/update-tenant/', update.UpdateTenant, name='update-tenant'),
 ]
