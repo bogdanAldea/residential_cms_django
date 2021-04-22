@@ -1,0 +1,35 @@
+{% load static %}
+
+<table class="table table-borderless general-table">
+
+    <thead class="general-table-head">
+
+        <tr class="general-table-title-row">
+            <th class="table-title-col" colspan="3">Index counters</th>
+        </tr>
+
+        <tr>
+            <th>Utility</th>
+            <th>Current index</th>
+            <th>Last index</th>
+            <th>Difference</th>
+            <th></th>
+        </tr>
+
+    </thead>
+
+    <tbody class="general-table-body">
+    {% for counter in counters %}
+        <tr class="general-table-row">
+            <th>{{ counter.util.name }}</th>
+            <th>{{ counter.index_counter }}</th>
+            <th>0</th>
+            <th>0</th>
+            <th>
+                <a href="{% url 'residential:update-main-counter' counter.pk %}" class="btn edit-util-btn">Update</button>
+            </th>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
