@@ -1,5 +1,7 @@
 @import "../00_design_system/03_variables.css";
-
+/*********************************/
+/*          FIRST ROW           */
+/*******************************/
 
 .card-content h5{
     font-family: var(--bold-font);
@@ -33,4 +35,12 @@
 .card-content {
     color: var(--dark);
     margin-top: 16px;
+}
+
+/**********************************/
+/*          SECOND ROW           */
+/********************************/
+
+.second-row {
+    margin-top: 30px;
 }

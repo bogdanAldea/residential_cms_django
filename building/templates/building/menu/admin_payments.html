@@ -6,7 +6,9 @@
     <title>Payments</title>
 
     <div class="container-fluid payments--panel content--panel">
-        <div class="row main-row">
+
+        {#    Info cards    #}
+        <section class="row first-row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="card payments-card total">
                             <div class="card-content my-auto ">
@@ -91,7 +93,17 @@
                             </div>
                         </div>
             </div>
-        </div>
+        </section>
+
+        {#            #}
+        <section class="row second-row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+                <div class="table-content">
+                    {% include 'building/tables/payments_list.html' %}
+                </div>
+            </div>
+        </section>
+
     </div>
 
 {% endblock content %}
