@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <title>Apartments List</title>
+
+    <div class="container-fluid settings--panel content--panel">
+
+
+        <div class="row content-row table-content">
+            <div class="col-xs-12 col-sm-12-col-md-12-col-lg-12">
+                {% include 'building/tables/apts__power_supplies_status.html' %}
+            </div>
+        </div>
+
+        <div class="row content-row table-content">
+            <div class="col-xs-12 col-sm-12-col-md-12-col-lg-12">
+                {% include 'building/tables/apts__index_counters.html' %}
+            </div>
+        </div>
+
+        <div class="row content-row table-content">
+            <div class="col-xs-12 col-sm-12-col-md-12-col-lg-12">
+                {% include 'building/tables/apts__tenant_assign.html' %}
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}
