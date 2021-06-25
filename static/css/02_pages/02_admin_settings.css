@@ -1,0 +1,5 @@
+@import "../00_design_system/03_variables.css";
+
+.content-row {
+    margin-top: 50px;
+}
