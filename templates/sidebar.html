@@ -13,22 +13,26 @@
         {#    Menu links    #}
         <div class="nav--links">
 
-            <a href="#" class="nav--link active">
+            {% url 'building:admin_dashboard' as url %}
+            <a href="{{ url }}" class="nav--link {% if request.path == url %}active{% endif %}">
                 <i class='bx bxs-dashboard link--icon'></i>
                 <span class="nav--link--name">Dashboard</span>
             </a>
 
-            <a href="#" class="nav--link">
+            {% url 'building:admin_settings' as url %}
+            <a href="{{ url }}" class="nav--link {% if request.path == url %}active{% endif %}">
                 <i class='bx bxs-grid link--icon'></i>
                 <span class="nav--link--name">Settings</span>
             </a>
 
-            <a href="#" class="nav--link">
+            {% url 'building:admin_apartments' as url %}
+            <a href="{{ url }}" class="nav--link {% if request.path == url %}active{% endif %}">
                 <i class='bx bxs-door-open link--icon'></i>
                 <span class="nav--link--name">Apartments</span>
             </a>
 
-            <a href="#" class="nav--link">
+            {% url 'building:admin_payments' as url %}
+            <a href="{{ url }}" class="nav--link {% if request.path == url %}active{% endif %}">
                 <i class='bx bxs-credit-card-front link--icon'></i>
                 <span class="nav--link--name">Payments</span>
             </a>
