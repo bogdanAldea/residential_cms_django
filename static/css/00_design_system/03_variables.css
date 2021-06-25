@@ -1,0 +1,27 @@
+:root {
+
+    /*    Colors    */
+    --accent            : #713BDB;
+    --dark-accent       : #6429D6;
+    --dark              : #575F7B;
+    --light             : #ffffff;
+    --background        : #F0F0F5;
+    --2nd-background    : #f7f6fb;
+
+    /* Font faces */
+    --thin-font              : "thin";
+    --light-font             : "light";
+    --regular-font           : "regular";
+    --medium-font            : "medium";
+    --bold-font              : "bold";
+    --black-font             : "black";
+
+    /* Margins, heights, widths */
+    --header-height : 4rem;
+    --nav-width     : 70px;
+    --z-index       : 100;
+
+    /* Shadows */
+    --shadow: 0 8px 8px -6px #CFD8EB;
+
+}

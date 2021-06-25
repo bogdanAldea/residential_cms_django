@@ -1,0 +1,22 @@
+@import "03_variables.css";
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    /*padding: 0 1rem;*/
+    transition: .5s;
+    background-color: var(--2nd-background);
+}
+
+.content--block {
+    margin-top: 100px;
+    margin-right: 50px;
+}
+
+a {
+    text-decoration: none;
+}

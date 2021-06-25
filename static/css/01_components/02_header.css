@@ -1,0 +1,43 @@
+@import "../00_design_system/03_variables.css";
+
+
+.header--section {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*padding: 0 1rem;*/
+    background-color: var(--light);
+    z-index: var(--z-index);
+    transition: .5s;
+}
+
+.menu--toggle--btn {
+    color: var(--dark-accent);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.notification-bell {
+    font-size: 24px;
+    color: var(--accent);
+}
+
+.user--message {
+    font-family: var(--medium-font);
+    color: var(--dark);
+}
+
+.welcome-msg {
+    font-family: var(--regular-font);
+}
+
+@media screen and (max-width: 412px) {
+    #dropdown-notification {
+        visibility: hidden;
+    }
+}

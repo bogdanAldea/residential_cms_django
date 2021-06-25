@@ -1,0 +1,112 @@
+@import "../00_design_system/00_system_package.css";
+
+
+.sidebar--section {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    background-color: var(--dark-accent);
+    padding: .5rem 1rem 0 0 ;
+    transition: .5s;
+    z-index: var(--z-index);
+}
+
+.nav--menu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.app--logo {
+    font-size: 1.5rem;
+    color: var(--light);
+    text-decoration: none;
+}
+
+.app--logo:hover {
+    text-decoration: none;
+}
+
+.app--logo, .nav--link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.link--icon {
+    font-size: 1.25rem;
+    font-size: 1.25rem;
+    color: var(--light);
+}
+
+.nav--logo--name {
+    color: var(--light);
+    font-weight: 700;
+}
+
+.nav--link {
+    position: relative;
+    color: var(--light);
+    margin-bottom: 1.5rem;
+    transition: .3s;
+}
+
+.nav--link:hover {
+    color: var(--light);
+    text-decoration: none;
+}
+
+.nav--link--name {
+    font-size: 12px;
+    font-family: var(--medium-font);
+    text-transform: uppercase;
+}
+
+.show {
+    left: 0;
+}
+
+.desktop--padding {
+    padding-left: calc(var(--nav-width) + 1rem);
+}
+
+.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--light);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 2rem);
+    }
+
+    .header--section {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+    }
+
+    .sidebar--section {
+        left: 0;
+        padding: 1rem 1rem 0 0;
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 156px);
+    }
+
+    .desktop--padding {
+        padding-left: calc(var(--nav-width) + 188px);
+    }
+}
