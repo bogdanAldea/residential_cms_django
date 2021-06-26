@@ -18,11 +18,11 @@
 
 .menu--toggle--btn {
     color: var(--dark-accent);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
-.notification-bell {
+.notification-bell, .cms-setting-icon {
     font-size: 24px;
     color: var(--accent);
 }

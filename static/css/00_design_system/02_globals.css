@@ -17,9 +17,9 @@ body {
     /*margin-right: 30px;*/
 }
 
-.dashboard--panel, .settings--panel {
-    margin-top: 150px;
-}
+/*.dashboard--panel, .settings--panel {*/
+/*    margin-top: 150px;*/
+/*}*/
 
 a {
     text-decoration: none;
