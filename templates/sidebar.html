@@ -21,7 +21,7 @@
 
             {% url 'building:admin_settings' as url %}
             <a href="{{ url }}" class="nav--link {% if request.path == url %}active{% endif %}">
-                <i class='bx bxs-grid link--icon'></i>
+                <i class='bx bx-slider link--icon'></i>
                 <span class="nav--link--name">Settings</span>
             </a>
 
@@ -35,6 +35,12 @@
             <a href="{{ url }}" class="nav--link {% if request.path == url %}active{% endif %}">
                 <i class='bx bxs-credit-card-front link--icon'></i>
                 <span class="nav--link--name">Payments</span>
+            </a>
+
+            {% url 'building:admin_documents' as url %}
+            <a href="{{ url }}" class="nav--link {% if request.path == url %}active{% endif %}">
+                <i class='bx bx-library link--icon'></i>
+                <span class="nav--link--name">Documents</span>
             </a>
         </div>
 
