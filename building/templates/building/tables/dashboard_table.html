@@ -18,48 +18,14 @@
 
         <tbody class="general-table-body">
 
+        {% for apartment in apartment_list %}
         <tr class="general-table-row">
-            <td>1</td>
-            <td>2</td>
-            <td>214.00</td>
-            <td>Unpaid</td>
+            <td>{{ apartment.number_id }}</td>
+            <td>{{ apartment.num_of_persons }}</td>
+            <td></td>
+            <td>{{ apartment.get_payment_status_display }}</td>
         </tr>
-        <tr class="general-table-row">
-            <td>1</td>
-            <td>2</td>
-            <td>214.00</td>
-            <td>Unpaid</td>
-        </tr>
-        <tr class="general-table-row">
-            <td>1</td>
-            <td>2</td>
-            <td>214.00</td>
-            <td>Unpaid</td>
-        </tr>
-        <tr class="general-table-row">
-            <td>1</td>
-            <td>2</td>
-            <td>214.00</td>
-            <td>Unpaid</td>
-        </tr>
-        <tr class="general-table-row">
-            <td>1</td>
-            <td>2</td>
-            <td>214.00</td>
-            <td>Unpaid</td>
-        </tr>
-        <tr class="general-table-row">
-            <td>1</td>
-            <td>2</td>
-            <td>214.00</td>
-            <td>Unpaid</td>
-        </tr>
-        <tr class="general-table-row">
-            <td>1</td>
-            <td>2</td>
-            <td>214.00</td>
-            <td>Unpaid</td>
-        </tr>
+        {% endfor %}
         </tbody>
     </table>
 </div>

@@ -21,12 +21,13 @@
     <tbody class="general-table-body">
         {% for apartment in building.apartment_set.all %}
             <tr class="general-table-row">
-                <td>{{ apartment.pk }}</td>
+                <td>{{ apartment.number_id }}</td>
                 <td>{{ apartment.tenant.phone }}</td>
-            {% for utility in apartment.individualutil_set.all %}
-                <td>{{ utility.index_counter }}</td>
-            {% endfor %}
-                <td><a href="{% url 'residential:update_status' apartment.pk %}" class="btn general-button edit-util-btn">Edit &rarr;</a></td>
+
+                {% for utility in apartment.powersupply_set.all %}
+                    <td>{{ utility.index_counter }}</td>
+                {% endfor %}
+                <td><a href="#"><i class='bx bxs-message-square-edit edit-icon-btn utility-icon'></i></a></td>
             </tr>
         {% endfor %}
     </tbody>

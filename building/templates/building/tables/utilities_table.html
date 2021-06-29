@@ -19,14 +19,16 @@
     </thead>
 
     <tbody class="general-table-body">
+
+    {% for mutual in mutual_utils %}
       <tr class="general-table-row">
-        <td>Elevator</td>
-        <td>Mutual</td>
-        <td>Private</td>
-        <td>22-04-2021</td>
-        <td>21-04-2022</td>
-        <td>Per Person</td>
-        <td>6.2</td>
+        <td>{{ mutual.name }}</td>
+        <td>{{ mutual.util_type }}</td>
+        <td>{{ mutual.provider }}</td>
+        <td>{{ mutual.contract_strated }}</td>
+        <td>{{ mutual.contract_ending }}</td>
+        <td>{{ mutual.tax_type }}</td>
+        <td>{{ mutual.tax_or_wage }}</td>
 <!--        <td><button href="" class="btn edit-util-btn">Edit util &rarr;</button></td>-->
         <td>
           <a href="#"><i class='bx bxs-edit edit-icon-btn utility-icon'></i></a>
@@ -34,66 +36,7 @@
         </td>
 
       </tr>
-      <tr class="general-table-row">
-        <td>Elevator</td>
-        <td>Mutual</td>
-        <td>Private</td>
-        <td>22-04-2021</td>
-        <td>21-04-2022</td>
-        <td>Per Person</td>
-        <td>6.2</td>
-<!--        <td><button href="" class="btn edit-util-btn">Edit util &rarr;</button></td>-->
-        <td>
-          <a href="#"><i class='bx bxs-edit edit-icon-btn utility-icon'></i></a>
-          <a class="" href="#"><i class='bx bxs-trash-alt delete-icon-btn utility-icon'></i></a>
-        </td>
-
-      </tr>
-      <tr class="general-table-row">
-        <td>Elevator</td>
-        <td>Mutual</td>
-        <td>Private</td>
-        <td>22-04-2021</td>
-        <td>21-04-2022</td>
-        <td>Per Person</td>
-        <td>6.2</td>
-<!--        <td><button href="" class="btn edit-util-btn">Edit util &rarr;</button></td>-->
-        <td>
-          <a href="#"><i class='bx bxs-edit edit-icon-btn utility-icon'></i></a>
-          <a class="" href="#"><i class='bx bxs-trash-alt delete-icon-btn utility-icon'></i></a>
-        </td>
-
-      </tr>
-      <tr class="general-table-row">
-        <td>Elevator</td>
-        <td>Mutual</td>
-        <td>Private</td>
-        <td>22-04-2021</td>
-        <td>21-04-2022</td>
-        <td>Per Person</td>
-        <td>6.2</td>
-<!--        <td><button href="" class="btn edit-util-btn">Edit util &rarr;</button></td>-->
-        <td>
-          <a href="#"><i class='bx bxs-edit edit-icon-btn utility-icon'></i></a>
-          <a class="" href="#"><i class='bx bxs-trash-alt delete-icon-btn utility-icon'></i></a>
-        </td>
-
-      </tr>
-      <tr class="general-table-row">
-        <td>Elevator</td>
-        <td>Mutual</td>
-        <td>Private</td>
-        <td>22-04-2021</td>
-        <td>21-04-2022</td>
-        <td>Per Person</td>
-        <td>6.2</td>
-<!--        <td><button href="" class="btn edit-util-btn">Edit util &rarr;</button></td>-->
-        <td>
-          <a href="#"><i class='bx bxs-edit edit-icon-btn utility-icon'></i></a>
-          <a class="" href="#"><i class='bx bxs-trash-alt delete-icon-btn utility-icon'></i></a>
-        </td>
-
-      </tr>
+    {% endfor %}
     </tbody>
 
   </table>

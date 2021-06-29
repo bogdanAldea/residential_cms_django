@@ -19,17 +19,20 @@
     <tbody class="general-table-body">
         {% for apartment in building.apartment_set.all %}
             <tr class="general-table-row">
-                <td>{{ apartment.pk }}</td>
-                <td>{{ apartment.persons }}</td>
+                <td>{{ apartment.number_id }}</td>
+                <td>{{ apartment.num_of_persons }}</td>
                 {% if apartment.tenant %}
                     <td>{{ apartment.tenant.email }}</td>
                     <td>{{ apartment.tenant.phone }}</td>
-                    <td class="text-center"><a href="{% url 'residential:update-tenant' apartment.pk %}" class="btn general-button update-tenant-btn">Update &rarr;</a></td>
+                    <td class="text-left">
+                        <a href="#"><i class='bx bxs-message-square-edit edit-icon-btn utility-icon'></i></a>
+                        <a href="#"><i class='bx bxs-message-square-minus edit-icon-btn utility-icon'></i></a>
+                    </td>
 
                 {% else %}
                     <td>Unavailable</td>
                     <td>Unavailable</td>
-                    <td class="text-center"><a href="{% url 'residential:assign-tenant' apartment.pk %}" class="btn general-button add-tenant-btn">Add &rarr;</a></td>
+                    <td class="text-left"><a href="#"><i class='bx bxs-message-square-add edit-icon-btn utility-icon'></i></a></td>
 
                 {% endif %}
             </tr>

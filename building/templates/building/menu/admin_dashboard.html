@@ -23,7 +23,7 @@
                                             <i class='bx bx-map-pin left--icon card--icon my-auto'></i>
                                         </div>
                                         <div class="media-body text-left">
-                                            <p class="card-detail my-auto">Cosminului, 32</p>
+                                            <p class="card-detail my-auto">{{ building.street_name.capitalize }}</p>
                                             <h6 class="card-title my-auto">Street Address</h6>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                             <i class='bx bxs-direction-left center--icon card--icon my-auto'></i>
                                         </div>
                                         <div class="media-body text-left">
-                                            <p class="card-detail my-auto">20</p>
+                                            <p class="card-detail my-auto">{{ building.street_number }}</p>
                                             <h6 class="card-title my-auto">Street Number</h6>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                                             <i class='bx bxs-city right--icon card--icon my-auto'></i>
                                         </div>
                                         <div class="media-body text-left">
-                                            <p class="card-detail my-auto">17</p>
+                                            <p class="card-detail my-auto">{{ building.city.capitalize }}</p>
                                             <h6 class="card-title my-auto">City</h6>
                                         </div>
                                     </div>
@@ -77,7 +77,7 @@
                                             <i class='bx bxs-map-alt left--icon card--icon my-auto'></i>
                                         </div>
                                         <div class="media-body text-left">
-                                            <p class="card-detail my-auto">Cosminului, 32</p>
+                                            <p class="card-detail my-auto">{{ building.county.capitalize }}</p>
                                             <h6 class="card-title my-auto">County</h6>
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
                                             <i class='bx bxs-coin-stack center--icon card--icon my-auto'></i>
                                         </div>
                                         <div class="media-body text-left">
-                                            <p class="card-detail my-auto">20</p>
+                                            <p class="card-detail my-auto">{{ building.apartments_capacity }}</p>
                                             <h6 class="card-title my-auto">Capacity</h6>
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                                             <i class='bx bxs-group right--icon card--icon my-auto'></i>
                                         </div>
                                         <div class="media-body text-left">
-                                            <p class="card-detail my-auto">17</p>
+                                            <p class="card-detail my-auto">{{ available_apts }}</p>
                                             <h6 class="card-title my-auto">Available</h6>
                                         </div>
                                     </div>
