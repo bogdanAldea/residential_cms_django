@@ -18,6 +18,8 @@ class Building(models.Model):
     admin               = models.OneToOneField(CustomUser, null=True, blank=True, on_delete=models.CASCADE)
     street_name         = models.CharField(max_length=100, null=True)
     street_number       = models.PositiveIntegerField()
+    city                = models.CharField(max_length=100, null=True)
+    county              = models.CharField(max_length=100, null=True)
     postal_code         = models.CharField(max_length=10, null=True)
     apartments_capacity = models.PositiveIntegerField()
     has_elevator        = models.BooleanField(default=False)
