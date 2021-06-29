@@ -1,17 +1,30 @@
 @import "../00_design_system/00_system_package.css";
 
+/*  Form page styles    */
+
 .form-body-full {
     margin: 0;
     padding: 0;
-}
-
-.presentation-col, .form-col {
     height: 100vh;
 }
 
+.form-page {
+    height: inherit;
+}
+
+.header-cta {
+    justify-content: end;
+    float: right;
+}
 
 .presentation-col {
     background: var(--dark-accent);
+    position: fixed;
+    height: 100%;
+}
+
+.form-col {
+    margin-left: 33.3%;
 }
 
 .form-app-logo {
@@ -34,10 +47,6 @@
     color: var(--light);
 }
 
-.header-cta {
-    float: right;
-}
-
 .auth-btn {
     font-family: var(--medium-font);
     font-size: 11px;
@@ -53,4 +62,46 @@
     background: var(--dark-accent);
     color: var(--light);
     transition: 0.5s;
+}
+
+
+/*  Form element styles     */
+.form-container {
+    width: 100%;
+}
+
+.custom-form {
+    width: 60%;
+    max-width: 60%;
+}
+
+.form-action-text {
+    font-family: var(--bold-font);
+    color: var(--dark);
+}
+
+.field-row {
+    height: inherit;
+    margin-bottom: 25px;
+}
+
+input, select {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #ECEAEA;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--dark);
+}
+
+.label {
+    font-family: var(--regular-font);
+    font-size: 12px;
+    color: var(--light-grey);
+}
+
+.input {
+    font-family: var(--regular-font);
+    font-size: 14px;
+    color: var(--dark);
 }

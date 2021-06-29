@@ -9,7 +9,7 @@
 /*               */
 
 .general-table-btn, .profile-update-btn, .update-index-btn, .submit-index-btn,
-.edit-util-btn, .export-table-btn, .add-mutual-util-btn {
+.edit-util-btn, .export-table-btn, .add-mutual-util-btn, .register-res-btn {
     background-color: var(--accent);
     color: var(--light);
 }
